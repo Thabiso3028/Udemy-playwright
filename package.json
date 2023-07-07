@@ -1,0 +1,14 @@
+{
+  "name": "udemy-playwright",
+  "version": "1.0.0",
+  "description": "Automation with playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thabzen",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.0.0"
+  }
+}
