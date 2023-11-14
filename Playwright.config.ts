@@ -4,7 +4,7 @@ const config: PlaywrightTestConfig = {
     timeout: 6000,
     retries: 0,
     use:{
-        headless: true,
+        headless: false,
         viewport: {width: 1280, height: 720},
         actionTimeout: 1500,
         ignoreHTTPSErrors: true,
@@ -22,3 +22,4 @@ const config: PlaywrightTestConfig = {
         },
     ],
 }
+export default config

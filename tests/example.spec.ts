@@ -1,8 +1,8 @@
  import { test, expect} from '@playwright/test'
 
 
-test.describe('First test', () => {
-   test('Simple basic test', async ({page}) => {
+test.describe('First test', () => {   // Allows to create test suites
+   test('Simple basic test @myTag', async ({page}) => { //Implemeted the tagging
       await page.goto('https://www.example.com')
   
       const pageTitle = await page.locator('h1')
@@ -10,9 +10,6 @@ test.describe('First test', () => {
       await expect(pageTitle).toContainText('Example Domain')
    })
   
-   /*test('Clicking on elements',async ({page}) => {
-      await page.goto('')
-   })*/
   
    test('Working on input', async ({page}) => {
      await page.goto('https://www.example.com')
@@ -23,7 +20,7 @@ test.describe('First test', () => {
    })
 })
 
-test.only('Testing user input',async ({page}) => {
+test('Testing user input',async ({page}) => {
    //const tmp = await page.locator('p');
 
    await page.goto('http://zero.webappsecurity.com/index.html');
@@ -35,4 +32,12 @@ test.only('Testing user input',async ({page}) => {
    const un = await page.locator('h5')
    await expect(un).not.toBeVisible()
    await page.pause
+})
+
+
+   
+test('Taking screenshots',async ({page}) => {
+   await page.goto('https://www.example.com')
+   
+   await page.screenshot({path : 'tests/Screenshots/test.png', fullPage:true})
 })
