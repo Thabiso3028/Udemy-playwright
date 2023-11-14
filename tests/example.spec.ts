@@ -33,3 +33,11 @@ test('Testing user input',async ({page}) => {
    await expect(un).not.toBeVisible()
    await page.pause
 })
+
+
+   
+test('Taking screenshots',async ({page}) => {
+   await page.goto('https://www.example.com')
+   
+   await page.screenshot({path : 'tests/Screenshots/test.png', fullPage:true})
+})
