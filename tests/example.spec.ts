@@ -41,3 +41,10 @@ test('Taking screenshots',async ({page}) => {
    
    await page.screenshot({path : 'tests/Screenshots/test.png', fullPage:true})
 })
+
+test.describe.only('Hooks', () => {
+   test.beforeEach(async ({page}) =>{
+      await page.goto('https://www.example.com')
+   })
+   
+})
