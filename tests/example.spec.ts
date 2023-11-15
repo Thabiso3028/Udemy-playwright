@@ -1,5 +1,5 @@
  import { test, expect} from '@playwright/test'
-
+ import { loadhomepage, screenshotFunction } from './helper'
 
 test.describe('First test', () => {   // Allows to create test suites
    test('Simple basic test @myTag', async ({page}) => { //Implemeted the tagging
@@ -40,4 +40,16 @@ test('Taking screenshots',async ({page}) => {
    await page.goto('https://www.example.com')
    
    await page.screenshot({path : 'tests/Screenshots/test.png', fullPage:true})
+})
+
+test.describe('Hooks', () => {
+   test.beforeEach(async ({page}) =>{
+      await page.goto('https://www.example.com')
+   })
+
+})
+
+test.only('Custom helper', async ({page}) => {
+   await loadhomepage(page)
+   await screenshotFunction(page)
 })
