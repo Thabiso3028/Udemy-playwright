@@ -45,12 +45,13 @@ test('Taking screenshots',async ({page}) => {
 test.describe('Hooks', () => {
    test.beforeEach(async ({page}) =>{
       await page.goto('https://www.example.com')
+      await expect(page).toHaveURL('https://www.example')
    })
 
 })
 
 test('Custom helper', async ({page}) => {
    await loadhomepage(page)
-   await page.pause();
+   
    await screenshotFunction(page)
 })
