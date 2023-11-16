@@ -49,7 +49,8 @@ test.describe('Hooks', () => {
 
 })
 
-test.only('Custom helper', async ({page}) => {
+test('Custom helper', async ({page}) => {
    await loadhomepage(page)
+   await page.pause();
    await screenshotFunction(page)
 })
