@@ -3,6 +3,7 @@ import { PlaywrightTestConfig } from "@playwright/test";
 const config: PlaywrightTestConfig = {
     timeout: 6000,
     retries: 0,
+    reporter: [['html']],
     use:{
         headless: false,
         viewport: {width: 1280, height: 720},
