@@ -28,7 +28,7 @@ test('Testing user input',async ({page}) => {
    await page.click('#signin_button')
    await page.type('#user_login', 'some username')
    await page.click('text=Sign in')
-   //await expect(page.locator('.alert-error')).toContainText('Failed')
+   await expect(page.locator('.alert-error')).toContainText('Failed')
    const un = await page.locator('h5')
    await expect(un).not.toBeVisible()
    await page.pause
@@ -51,6 +51,6 @@ test.describe('Hooks', () => {
 
 test('Custom helper', async ({page}) => {
    await loadhomepage(page)
-   await page.pause();
+   
    await screenshotFunction(page)
 })
